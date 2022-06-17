@@ -1,6 +1,6 @@
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex'
-import Lista from './lista.vue'
+import Lista from './Lista.vue'
 
 export default {
   name: 'Formulario',
@@ -21,7 +21,7 @@ export default {
           vm.carregar(to.params.id)
             .then(result => { vm.formulario = result })
         } catch (e) {
-          console.log(`ID ${to.params.id} não existe na lista!`)
+          console.log(`ID ${to.params.id} does not exist in the list!`)
           vm.$router.push('/')
         }
       } else {
@@ -48,9 +48,12 @@ export default {
         this.adicionar(this.formulario)
         this.limpar()
         this.$router.push('/')
+      } else if (isNaN(this.formulario.preco)) {
+        this.classMsg = true
+        this.msg = 'Fit a price with numbers only, do not use comman.'
       } else {
         this.classMsg = true
-        this.msg = 'Preencha todos os dados corretamente!'
+        this.msg = 'Fit all data correctly!'
       }
     },
     limpar () {
@@ -69,16 +72,16 @@ export default {
 <template>
     <div id="formulario">
         <img class="imagem-responsiva" src="../img/Logo Salesoft.png">
-        <h1 class="alinhar">Faça sua Lista {{nomecompleto}} </h1>
+        <h1 class="alinhar">Make your List! {{nomecompleto}} </h1>
         <div class="row">
         </div>
         <div class="row conteudo">
             <input type="hidden" id="id" v-model="formulario.id" />
             <div class="col-lg-5 col-sm-5 col-md-5 col-lg-offset-1 col-md-offset-1">
-                <input type="text" class="form-control" id="descricao" v-model="formulario.descricao" placeholder="Insira uma descrição" />
+                <input type="text" class="form-control" id="descricao" v-model="formulario.descricao" placeholder="Insert a description" />
             </div>
             <div class="col-lg-2 col-sm-2 col-md-2">
-                <input type="text" class="form-control" id="preco" v-model="formulario.preco" placeholder="Preço Ex: 9,90" />
+                <input type="text" class="form-control" id="preco" v-model="formulario.preco" placeholder="Price Ex: 9.90" />
             </div>
             <div class="col-lg-1 col-sm-1">
                 <input type="button" class="btn btn-primary" @click="add" value="+ Adicionar">

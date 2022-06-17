@@ -16,11 +16,11 @@ export default {
         <div class="navbar-header">
           <img src="../img/Logo Salesoft2.png"/>
         </div>
-        <router-link to="/" class="navbar-brand"> &nbsp;&nbsp;Treinamento Vue.js</router-link>
+        <router-link to="/" class="navbar-brand"> &nbsp;&nbsp;First Practicing Vue.js 2018</router-link>
         <ul class="nav navbar-nav">
-          <li><router-link to="/">Lista de Compras</router-link></li>
-          <li><router-link to="/cep">Busca Endereço</router-link></li>
-          <li><router-link to="/endereco">Busca CEP</router-link></li>
+          <li><router-link to="/">Buying List</router-link></li>
+          <li><router-link to="/cep">Search Address</router-link></li>
+          <li><router-link to="/endereco">Search BR CEP</router-link></li>
         </ul>
       </div>
     </nav>

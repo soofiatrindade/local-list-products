@@ -1,6 +1,6 @@
 <script>
 import { mapActions } from 'vuex'
-import Menu from './components/menu.vue'
+import Menu from './components/Menu.vue'
 
 export default {
   components: {

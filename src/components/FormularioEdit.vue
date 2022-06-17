@@ -3,7 +3,9 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   data () {
     return {
-      formularioEdit: {}
+      formularioEdit: {},
+      classMsg: '',
+      msg: ''
     }
   },
   beforeRouteEnter (to, from, next) {
@@ -32,10 +34,18 @@ export default {
   },
   methods: {
     add () {
+      this.classMsg = false
+      this.msg = ''
       if (this.formularioEdit.descricao !== '' && this.formularioEdit.preco !== '' && (!isNaN(this.formularioEdit.preco))) {
         this.adicionar(this.formularioEdit)
         this.limpar()
         this.$router.push('/')
+      } else if (isNaN(this.formularioEdit.preco)) {
+        this.classMsg = true
+        this.msg = 'Fit a price with numbers only, do not use comman.'
+      } else {
+        this.classMsg = true
+        this.msg = 'Fit all data correctly!'
       }
     },
     limpar () {
@@ -56,13 +66,16 @@ export default {
     <div class="row conteudo">
         <input type="hidden" id="id" v-model="formularioEdit.id" />
         <div class="col-lg-5 col-sm-5 col-md-5 col-lg-offset-1 col-md-offset-1">
-            <input type="text" class="form-control" id="descricaoEdit" v-model="formularioEdit.descricao" placeholder="Insira uma descrição" />
+            <input type="text" class="form-control" id="descricaoEdit" v-model="formularioEdit.descricao" placeholder="Insert a Description" />
         </div>
         <div class="col-lg-2 col-sm-2 col-md-2">
-            <input type="text" class="form-control" id="precoEdit" v-model="formularioEdit.preco" placeholder="Preço Ex: 9,90" />
+            <input type="text" class="form-control" id="precoEdit" v-model="formularioEdit.preco" placeholder="Price Ex: 9,90" />
         </div>
         <div class="col-lg-1 col-sm-1">
-            <input type="button" class="btn btn-primary" @click="add" value="+ Adicionar">
+            <input type="button" class="btn btn-primary" @click="add" value="+ Edit!!">
+        </div>
+        <div class="col-lg-2 col-sm-3 tamanho-msg col-sm-offset-1">
+          <label id="msg" :class="{ 'alert alert-info': classMsg }">{{msg}}</label>
         </div>
     </div>
     <br/>

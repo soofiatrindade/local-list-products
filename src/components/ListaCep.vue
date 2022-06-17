@@ -24,7 +24,7 @@ export default {
               <tr>
                 <th><i class="fa fa-list-ul" aria-hidden="true"></i> CEP</th>
                 <th class="alinhamento-table">Nº IBGE</th>
-                <th class="alinhamento-table">Complemento</th>
+                <th class="alinhamento-table">Complement</th>
                 <th></th>
               </tr>
           </thead>

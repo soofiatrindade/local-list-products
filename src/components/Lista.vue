@@ -30,9 +30,9 @@ export default {
           <thead>
               <tr>
                 <th><i class="fa fa-list-ul" aria-hidden="true"></i></th>
-                <th>Minha Lista - Componente</th>
-                <th>Preço</th>
-                <th>Soma: R$ {{soma}}</th>
+                <th>My List - Components</th>
+                <th>Price</th>
+                <th>Sum: R$ {{soma}}</th>
               </tr>
           </thead>
           <tbody>

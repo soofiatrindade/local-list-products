@@ -1,6 +1,6 @@
 <script>
 import { mapActions, mapGetters, mapState } from 'vuex'
-import ListaCep from './listaCep.vue'
+import ListaCep from './ListaCep.vue'
 
 export default {
   name: 'FormularioEndereco',
@@ -37,27 +37,27 @@ export default {
 <template>
     <div id="formularioEndereco">
         <div class="row">
-            <h1>Insira o Endreço</h1>
+            <h1>Insert your Brazilian Address and I will give your CEP</h1>
             <br/>
         </div>
         <br/>
         <div class="row">
           <div class="col-lg-12">
             <div class="col-sm-2">
-              <label for="uf" class="col-sm-1 control-label">UF:</label>
+              <label for="uf" class="col-sm-1 control-label">State:</label>
               <input type="text" id="uf" v-model="formulario.uf" class="form-control" /><br />
             </div>
             <div class="col-sm-4">
-              <label for="rua" class="col-sm-1 control-label">Cidade:</label>
+              <label for="rua" class="col-sm-1 control-label">City:</label>
               <input type="text" id="cidade" v-model="formulario.cidade" class="form-control" /><br />
             </div>
             <div class="col-sm-5">
-              <label for="rua" class="col-sm-1 control-label">Rua:</label>
+              <label for="rua" class="col-sm-1 control-label">Street:</label>
               <input type="text" id="rua" v-model="formulario.rua" class="form-control" /><br />
             </div>
            <div class="col-sm-1">
               <br/>
-              <input type="button" class="btn btn-primary" @click="buscar" value="Buscar">
+              <input type="button" class="btn btn-primary" @click="buscar" value="Search">
             </div>
           </div>
         </div>

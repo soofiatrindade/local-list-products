@@ -43,13 +43,13 @@ export default {
 <template>
     <div id="formularioCep">
         <div class="row">
-            <h1>Insira o CEP</h1>
+            <h1>Insert a Brazilian CEP</h1>
             <br/>
         </div>
         <br/>
         <div class="row">
             <div class="col-lg-5 col-sm-5 col-md-5 col-lg-offset-1 col-md-offset-1">
-                <input type="text" class="form-control" id="cep" v-model="cep" placeholder="Insira o CEP" />
+                <input type="text" class="form-control" id="cep" v-model="cep" placeholder="Insert the CEP, ex: 15055-500" />
             </div>
             <div class="col-lg-1 col-sm-1">
                 <input type="button" class="btn btn-primary" @click="buscar" value="Buscar">
@@ -63,13 +63,13 @@ export default {
         </div>
         <div class="row">
             <div class="col-lg-7">
-                <label for="rua" class="col-sm-1 control-label">Rua:</label>
+                <label for="rua" class="col-sm-1 control-label">Street:</label>
                 <div class="col-sm-11">
                     <input type="text" id="rua" :value="info.logradouro" class="form-control" /><br />
                 </div>
             </div>
             <div class="col-lg-4">
-                <label for="complemento" class="col-sm-4 control-label">Complemento:</label>
+                <label for="complemento" class="col-sm-4 control-label">Complement:</label>
                 <div class="col-sm-8">
                     <input type="text" id="complemento" :value="info.complemento" class="form-control" /><br />
                 </div>
@@ -77,13 +77,13 @@ export default {
         </div>
         <div class="row">
             <div class="col-lg-7">
-                <label for="bairro" class="col-sm-1 control-label">Bairro:</label>
+                <label for="bairro" class="col-sm-1 control-label">Neighborhood:</label>
                 <div class="col-sm-10">
                     <input type="text" id="bairro" :value="info.bairro" class="form-control" /><br />
                 </div>
             </div>
             <div class="col-lg-7">
-                <label for="cidade" class="col-sm-1 control-label">Cidade:</label>
+                <label for="cidade" class="col-sm-1 control-label">City:</label>
                 <div class="col-sm-8">
                     <input type="text" id="cidade" :value="info.localidade" class="form-control" /><br />
                 </div>
@@ -91,7 +91,7 @@ export default {
         </div>
         <div class="row">
           <div class="col-lg-7">
-            <label for="uf" class="col-sm-1 control-label">UF:</label>
+            <label for="uf" class="col-sm-1 control-label">State:</label>
             <div class="col-sm-3">
                 <input type="text" id="uf" :value="info.uf" class="form-control" /><br />
             </div>
